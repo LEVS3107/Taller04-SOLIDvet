@@ -45,6 +45,30 @@ src/main/java/clinicaveterinaria/
 ## Trabajo del taller
 
 - Integrante 1: refactorizar SRP.
+
+Checklist de validación:
+
+| Criterio | Sí/No |
+| --- | --- |
+| El proyecto compila |Si|
+| `Veterinario` ya no reserva, diagnostica, factura ni reporta |No reporta |
+| La funcionalidad del `Main` se mantiene | Si a medias|
+| Los nombres de servicios son claros |Si|
+
+Preguntas de discusión:
+
+- ¿Cuántas razones para cambiar tenía `Veterinario` antes del refactoring?
+
+Habian 4 razones que iban en diagnostico, reporte, facturacion y reserva
+- ¿Qué ganamos al separar modelo y servicios
+
+Que la logica que se encontraba en veterinario se separe y que veterinario tiene solo una logica de que preocuparse
+
+- ¿Qué clase debería cambiar si mañana cambia el formato del reporte?
+
+La clase ReservaService ya que por ahi pasa todos los strings
+
+
 - Integrante 2: refactorizar OCP.
 - Integrante 3: refactorizar LSP.
 - Integrante 4: refactorizar ISP y DIP.
