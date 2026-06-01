@@ -65,4 +65,4 @@ Al modelar capacidades unicas para las clases hijas damos mayor flexibilidad y e
 
 | Equipo | Compila | Ejecuta | Cumple SOLID | Evidencia breve |
 | --- | --- | --- | --- | --- |
-| LSP | | |Si cumple | Se segmento la interfaz IAnimal para as habilidades especificas de cada animal `public interface IAnimalNadador{ void nadar();}`, `public interface IAnimalCaminador{ void caminar();}` y `public interface IAnimalVolador{ void volar();}` |
+| LSP | Si | Si |Si cumple | Se segmento la interfaz IAnimal para as habilidades especificas de cada animal `public interface IAnimalNadador{ void nadar();}`, `public interface IAnimalCaminador{ void caminar();}` y `public interface IAnimalVolador{ void volar();}` |

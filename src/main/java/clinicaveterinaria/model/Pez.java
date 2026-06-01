@@ -9,7 +9,7 @@ public class Pez extends Animal implements IAnimalNadador{
     }
 
     public void nadar() {
-        System.out.println(getNombre() + " esta nadando.");
+        System.out.println(getNombre() + " esta nadandop.");
     }
 
 }
