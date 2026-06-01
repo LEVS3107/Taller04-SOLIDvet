@@ -10,9 +10,16 @@ import java.time.LocalDate;
 
 public class ReservaService {
     private final BaseDatos baseDatos;
+    private boolean disponible;
 
-    public ReservaService(BaseDatos baseDatos) {
+    public ReservaService(BaseDatos baseDatos, boolean disponible, int id, Mascota mascota) {
         this.baseDatos = baseDatos;
+        this.disponible = disponible;
+    }
+
+    public Cita reservarCita(int citaId, Mascota mascota, LocalDate fecha) {
+        disponible = false;
+        return new Cita(citaId, mascota, this, fecha, "Pendiente", EstadoCita.PROGRAMADA);
     }
 
     public Cita reservarCita(int id, Mascota mascota, Veterinario veterinario, LocalDate fecha) {
@@ -21,4 +28,5 @@ public class ReservaService {
         veterinario.setDisponible(false);
         return cita;
     }
+
 }

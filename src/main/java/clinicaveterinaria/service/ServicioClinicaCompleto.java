@@ -25,7 +25,7 @@ public class ServicioClinicaCompleto implements IServicioClinica {
         this.citaService = new CitaService(baseDatos);
         this.tratamientoService = new TratamientoService(baseDatos);
         this.facturaService = new FacturaService(baseDatos);
-        this.reporteService = new ReporteService(baseDatos);
+        this.reporteService = new ReporteService(baseDatos, null);
     }
 
     @Override
