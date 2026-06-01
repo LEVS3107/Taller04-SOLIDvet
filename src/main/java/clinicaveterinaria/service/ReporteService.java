@@ -11,9 +11,16 @@ import java.util.List;
 
 public class ReporteService {
     private final BaseDatos baseDatos;
+    private String nombre;
 
-    public ReporteService(BaseDatos baseDatos) {
+    public ReporteService(BaseDatos baseDatos, String nombre) {
         this.baseDatos = baseDatos;
+        this.nombre = nombre;
+    }
+
+    public String crearReporte(Cita cita) {
+        String nombre = this.nombre;
+        return "Reporte: " + nombre + " atendio a " + cita.getMascota().getNombre() + " con diagnostico " + cita.getDiagnostico();
     }
 
     public List<Cita> generarReporteCitasPorVeterinario(int veterinarioId) {

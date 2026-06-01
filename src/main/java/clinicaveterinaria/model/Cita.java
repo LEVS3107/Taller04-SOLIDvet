@@ -3,6 +3,8 @@ package clinicaveterinaria.model;
 import java.time.LocalDate;
 import java.util.Objects;
 
+import clinicaveterinaria.service.ReservaService;
+
 public class Cita {
     private int id;
     private Mascota mascota;
@@ -18,6 +20,10 @@ public class Cita {
         this.fecha = fecha;
         this.diagnostico = diagnostico;
         this.estado = estado;
+    }
+
+    public Cita(int citaId, Mascota mascota, ReservaService reservaService, LocalDate fecha, String diagnostico,
+            EstadoCita programada) {
     }
 
     public int getId() {
