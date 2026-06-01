@@ -1,13 +1,14 @@
 package clinicaveterinaria.model;
 
+import clinicaveterinaria.interfaces.IAnimalVolador;
 
-public class Pajaro extends Animal {
+
+public class Pajaro extends Animal implements IAnimalVolador{
     public Pajaro(int id, String nombre) {
         super(id, nombre, TipoAnimal.PAJARO);
     }
 
-    @Override
-    public void nadar() {
-        throw new UnsupportedOperationException("Un pajaro de consulta general no nada.");
+    public void volar() {
+        System.out.println(getNombre() + " esta volando.");
     }
 }
