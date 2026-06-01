@@ -68,4 +68,9 @@ public class BaseDatos implements IBaseDatos {
         }
         return total;
     }
+
+    @Override
+    public void conectar() {
+        System.out.println("Conectando a la base de datos...");
+    }
 }

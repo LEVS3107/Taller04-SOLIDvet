@@ -277,10 +277,10 @@ Checklist de validación:
 
 | Criterio | Sí/No |
 | --- | --- |
-| El proyecto compila | |
-| `RecepcionService` no implementa métodos innecesarios | |
-| `Clinica` no usa `new` para dependencias principales | |
-| Las dependencias se reciben por constructor | |
+| El proyecto compila | si |
+| `RecepcionService` no implementa métodos innecesarios | Si |
+| `Clinica` no usa `new` para dependencias principales | Si |
+| Las dependencias se reciben por constructor | Si |
 
 Preguntas de discusión:
 
@@ -295,7 +295,7 @@ Preguntas de discusión:
 | SRP | | | | |
 | OCP | | | | |
 | LSP | | | | |
-| ISP/DIP | | | | |
+| ISP/DIP | Si | SI | Si |  |
 
 Comandos mínimos:
 

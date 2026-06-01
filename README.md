@@ -47,6 +47,11 @@ src/main/java/clinicaveterinaria/
 - Integrante 1: refactorizar SRP.
 - Integrante 2: refactorizar OCP.
 - Integrante 3: refactorizar LSP.
-- Integrante 4: refactorizar ISP y DIP.
+- Integrante 4 (Luis Mendoza): refactorizar ISP y DIP.
+
+Tube que Fragmentar la intefaz IservicioClinica dado que al ser una interfaz muy grande hacia que se tubieran que implementar todos los metodos y muchos de ellos no eran usados en Recepcion.java
+modifique clinica porque no cumple solid y en el futuro seria dificil al tener que cambiar codigo ya existente por ende al usar sus interfaces no esta atado a la clase
+Asi mismo se modifico GestorReportesClinica.java para que reciba eso.
+
 
 Lee `guia.md` para instrucciones, checklists y preguntas de discusión.

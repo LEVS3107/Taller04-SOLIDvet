@@ -4,7 +4,6 @@ import clinicaveterinaria.model.*;
 import clinicaveterinaria.repository.*;
 import clinicaveterinaria.service.*;
 
-
 import java.time.LocalDate;
 
 public class Main {
@@ -42,7 +41,7 @@ public class Main {
         System.out.println("Ingresos del mes: " + reporteService.calcularIngresosMensual());
 
         demostrarViolacionesSinRomperEjecucion(veterinario, mascota, tratamiento);
-        new Clinica().agendarConsultaRapida(mascota, veterinario);
+        new Clinica(new DirectoVeterinario(), new DirectoBaseDatos()).agendarConsultaRapida(mascota, veterinario);
         new ServicioClinicaCompleto(baseDatos).calcularTratamiento(tratamiento);
     }
 
@@ -56,4 +55,5 @@ public class Main {
         System.out.println("El pez heredó caminar() y volar(), aunque no debe usarlos.");
         System.out.println("Tratamiento OCP violado pero funcional: " + tratamiento.obtenerIndicaciones());
     }
+    
 }
