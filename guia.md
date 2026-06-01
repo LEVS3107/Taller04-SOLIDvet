@@ -220,8 +220,13 @@ Checklist de validación:
 Preguntas de discusión:
 
 - ¿Por qué lanzar `UnsupportedOperationException` puede ser señal de mal diseño?
+Lanzar `UnsupportedOperationException` es señal de un mal diseño porque desde un inicio estamos asumiendo que el codigo se va a llegar a romper por la implementacion de un atributo que no se hereda, en este caso un animal con una habilidad que no le corresponde
+
 - ¿Qué contrato estaba prometiendo `Animal`?
+`Animal` prometia que todos los animales iban a poder realizar todas las habilidades en este caso `nadar()`, `caminar()` y `volar()`
+
 - ¿Cómo cambia el diseño cuando modelamos capacidades en lugar de herencia amplia?
+Al modelar capacidades unicas para las clases hijas damos mayor flexibilidad y espacio para futuras mejoras sin tener que modificar directamente la clase padre.
 
 ## Integrante 4 - DIP/ISP
 
@@ -277,10 +282,10 @@ Checklist de validación:
 
 | Criterio | Sí/No |
 | --- | --- |
-| El proyecto compila | |
-| `RecepcionService` no implementa métodos innecesarios | |
-| `Clinica` no usa `new` para dependencias principales | |
-| Las dependencias se reciben por constructor | |
+| El proyecto compila | si |
+| `RecepcionService` no implementa métodos innecesarios | Si |
+| `Clinica` no usa `new` para dependencias principales | Si |
+| Las dependencias se reciben por constructor | Si |
 
 Preguntas de discusión:
 
@@ -295,6 +300,8 @@ Preguntas de discusión:
 | SRP | | | | |
 | OCP | | | | |
 | LSP | | | | |
+| ISP/DIP | Si | SI | Si |  |
+| LSP | Si | Si |Si cumple | Se segmento la interfaz IAnimal para as habilidades especificas de cada animal `public interface IAnimalNadador{ void nadar();}`, `public interface IAnimalCaminador{ void caminar();}` y `public interface IAnimalVolador{ void volar();}` |
 | ISP/DIP | | | | |
 
 Comandos mínimos:

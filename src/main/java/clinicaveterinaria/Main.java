@@ -4,7 +4,6 @@ import clinicaveterinaria.model.*;
 import clinicaveterinaria.repository.*;
 import clinicaveterinaria.service.*;
 
-
 import java.time.LocalDate;
 
 public class Main {
@@ -43,6 +42,8 @@ public class Main {
 
         demostrarViolacionesSinRomperEjecucion(reporteService,reservaService,veterinario, mascota, tratamiento);
         new Clinica().agendarConsultaRapida(mascota, veterinario);
+        demostrarViolacionesSinRomperEjecucion(veterinario, mascota, tratamiento);
+        new Clinica(new DirectoVeterinario(), new DirectoBaseDatos()).agendarConsultaRapida(mascota, veterinario);
         new ServicioClinicaCompleto(baseDatos).calcularTratamiento(tratamiento);
     }
 
@@ -51,9 +52,10 @@ public class Main {
         DiagnosticoService.diagnosticar(citaDesdeModelo, "Ejemplo de SRP violado desde el modelo.");
         System.out.println(reporteService.crearReporte(citaDesdeModelo));
 
-        Animal pez = new Pez(3, "Nemo");
+        Pez pez = new Pez(3, "Nemo");
         pez.nadar();
-        System.out.println("El pez heredó caminar() y volar(), aunque no debe usarlos.");
+        System.out.println("El pez implemento unicamente su habilidad nadar.");
         System.out.println("Tratamiento OCP violado pero funcional: " + tratamiento.obtenerIndicaciones());
     }
+    
 }
