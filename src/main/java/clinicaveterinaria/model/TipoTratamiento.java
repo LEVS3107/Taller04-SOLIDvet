@@ -4,5 +4,6 @@ public enum TipoTratamiento {
     VACUNA,
     CIRUGIA,
     MEDICAMENTO,
-    FISIOTERAPIA
+    FISIOTERAPIA,
+    PRUEBA
 }
