@@ -50,3 +50,19 @@ src/main/java/clinicaveterinaria/
 - Integrante 4: refactorizar ISP y DIP.
 
 Lee `guia.md` para instrucciones, checklists y preguntas de discusión.
+
+### Integrante 3: refactorizar LSP.
+Preguntas de discusión:
+
+- ¿Por qué lanzar `UnsupportedOperationException` puede ser señal de mal diseño?
+Lanzar `UnsupportedOperationException` es señal de un mal diseño porque desde un inicio estamos asumiendo que el codigo se va a llegar a romper por la implementacion de un atributo que no se hereda, en este caso un animal con una habilidad que no le corresponde
+
+- ¿Qué contrato estaba prometiendo `Animal`?
+`Animal` prometia que todos los animales iban a poder realizar todas las habilidades en este caso `nadar()`, `caminar()` y `volar()`
+
+- ¿Cómo cambia el diseño cuando modelamos capacidades en lugar de herencia amplia?
+Al modelar capacidades unicas para las clases hijas damos mayor flexibilidad y espacio para futuras mejoras sin tener que modificar directamente la clase padre.
+
+| Equipo | Compila | Ejecuta | Cumple SOLID | Evidencia breve |
+| --- | --- | --- | --- | --- |
+| LSP | Si | Si |Si cumple | Se segmento la interfaz IAnimal para as habilidades especificas de cada animal `public interface IAnimalNadador{ void nadar();}`, `public interface IAnimalCaminador{ void caminar();}` y `public interface IAnimalVolador{ void volar();}` |
